@@ -1,0 +1,11 @@
+librosa 
+numpy 
+tensorflow
+pymongo
+Flask 
+scikit-learn 
+pandas 
+joblib
+matplotlib 
+seaborn 
+requests

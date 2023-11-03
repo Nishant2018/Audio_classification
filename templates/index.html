@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Classification</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="audio-design"></div>
+        <div class="container">
+            <h1>Audio Classification</h1>
+            <h3>You can upload your file of these classes:</h3>
+            <ul>
+                <li>Air Conditioner</li>
+                <li>Car Horn</li>
+                <li>Children Playing</li>
+                <li>Dog Bark</li>
+                <li>Drilling</li>
+                <li>Engine Idling</li>
+                <li>Gun Shot</li>
+                <li>Jackhammer</li>
+                <li>Siren</li>
+                <li>Street Music</li>
+            </ul>
+            
+            <!-- Add the link for users to download audio data -->
+            <p>Download the audio data for testing from <a href="https://www.kaggle.com/datasets/chrisfilo/urbansound8k">here</a>.</p>
+            
+            <div class="upload-form">
+                <form method="post" action="/predict" enctype="multipart/form-data">
+                    <input type="file" name="file" accept=".wav" />
+                    <select name="class_label">
+                        <option value="air_conditioner">Air Conditioner</option>
+                        <option value="car_horn">Car Horn</option>
+                        <option value="children_playing">Children Playing</option>
+                        <option value="dog_bark">Dog Bark</option>
+                        <option value="drilling">Drilling</option>
+                        <option value="engine_idling">Engine Idling</option>
+                        <option value="gun_shot">Gun Shot</option>
+                        <option value="jackhammer">Jackhammer</option>
+                        <option value="siren">Siren</option>
+                        <option value="street_music">Street Music</option>
+                    </select>
+                    <button class="upload-btn" type="submit">Predict</button>
+                </form>
+                {% if prediction_text %}
+                    <p class="output-text">{{ prediction_text }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
