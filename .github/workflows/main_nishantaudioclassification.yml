@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'nishantaudioclassification'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0EEFD2DEEFC541DFA7BFED6F7DED92AE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E5FE984E1FCC41C2B8866CEB5A72ACAB }}
