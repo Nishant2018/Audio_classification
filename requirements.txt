@@ -1,7 +1,7 @@
-librosa==0.8.1
-numpy==1.24.3
-tensorflow==2.13.0
-pymongo==3.13.0
-flask==2.0.1
+librosa
+numpy
+tensorflow
+pymongo
+flask
 scikit-learn
-pandas==1.3.5
+pandas
