@@ -1,6 +1,6 @@
 librosa
 numpy
-tensorflow
+tensorflow==2.7.0
 pymongo
 flask
 scikit-learn
