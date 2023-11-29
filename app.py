@@ -4,7 +4,6 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import LabelEncoder
 from pymongo import MongoClient
-from datetime import datetime
 
 app = Flask(__name__,static_folder='static')
 labelencoder = LabelEncoder()
@@ -41,19 +40,14 @@ def predict():
         predicted_label = np.argmax(x_predict, axis=1)
         prediction_class = labelencoder.inverse_transform(predicted_label)[0]
 
-        current_date_time = datetime.now()
-
-        # Generate a new collection name based on the date and time
 
 
         collection.insert_one({
             'filename': audio_file.filename,
             'predicted_class': prediction_class,
-            'date_time': current_date_time
         })
 
         return render_template('index.html', prediction_text='Predicted class: {}'.format(prediction_class))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=8080)
-    #app.run(debug=True)
+    app.run(debug=True)
